@@ -9,10 +9,10 @@ var data = {
     }
 };
 const server = http.createServer(async (req, res) => {
-    if (req.url === "/" && req.method === "GET") {
+    if (req.url === "/api" && req.method === "GET") {
         res.writeHead(200, { "Content-Type": "application/json" });
         res.write(JSON.stringify(data));
-    } else if (req.url === "/" && req.method === "POST") {
+    } else if (req.url === "/api" && req.method === "POST") {
         const id = randomBytes(4).toString('hex');
         const payload = [];
         res.writeHead(200, { "Content-Type": "application/json" });
